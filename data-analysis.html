@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="IB Physics IA data analysis toolkit: uncertainties, repeats, error bars, graphs, gradients, significant figures and worked examples.">
+  <title>Data Analysis Toolkit | IB Physics IA Guide</title>
+  <link rel="stylesheet" href="styles.css"><script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">IA</span><span>IB Physics IA Guide</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="practicals.html">Practical ideas</a><a href="guide.html">High-mark guide</a><a class="active" href="data-analysis.html">Data analysis</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a></nav></div></header>
+
+<main id="main">
+<section class="page-hero"><div class="inner">
+  <p class="eyebrow">How to do the analysis</p>
+  <h1>Data Analysis Toolkit</h1>
+  <p>Use this page while you are processing your IA data. It shows you what to calculate, how to deal with uncertainty, how to add error bars and how to turn measurements into evidence for your conclusion.</p>
+  <div class="subnav"><a href="#workflow">Workflow</a><a href="#measurement-uncertainty">Uncertainty</a><a href="#repeats">Repeats</a><a href="#propagation">Propagation</a><a href="#error-bars">Error bars</a><a href="#graphs">Graphs</a><a href="#gradient">Gradient</a><a href="#comparison">Comparison</a><a href="#worked-example">Worked example</a></div>
+</div></section>
+
+<section class="section">
+<div class="content-grid">
+<div>
+
+<section id="workflow" class="content-section">
+  <p class="kicker">Big picture</p><h2>The analysis workflow</h2>
+  <div class="analysis-flow">
+    <div><span>1</span><strong>Raw data</strong><small>Record values, units and instrument uncertainty.</small></div>
+    <div><span>2</span><strong>Repeats</strong><small>Calculate a mean and estimate spread.</small></div>
+    <div><span>3</span><strong>Process</strong><small>Calculate derived quantities and their uncertainty.</small></div>
+    <div><span>4</span><strong>Graph</strong><small>Choose axes from the physics model and add error bars.</small></div>
+    <div><span>5</span><strong>Extract</strong><small>Use gradient, intercept or fitted relationship.</small></div>
+    <div><span>6</span><strong>Interpret</strong><small>Decide what the evidence says about the RQ.</small></div>
+  </div>
+  <div class="callout tip"><strong>Plan the graph before collecting the final data.</strong> If you do not know what you expect to plot, you probably have not yet connected the method strongly enough to the physics model.</div>
+</section>
+
+<section id="measurement-uncertainty" class="content-section">
+  <p class="kicker">Step 1</p><h2>Measurement uncertainty</h2>
+  <p>Every measured quantity has uncertainty. Your job is not to make the uncertainty tiny; it is to estimate it honestly and use it consistently.</p>
+
+  <div class="info-grid">
+    <div class="info-box"><h4>Instrument resolution</h4><p>Use the smallest meaningful change the instrument can resolve as your minimum uncertainty unless your teacher has given a different convention or the manufacturer specifies one.</p></div>
+    <div class="info-box"><h4>Repeated readings</h4><p>If repeats vary by more than the instrument resolution, the spread of the repeats may be a better estimate of uncertainty.</p></div>
+    <div class="info-box"><h4>Digital sensors</h4><p>Do not assume a displayed value is exact. Consider sensor resolution, calibration and the variability of the reading.</p></div>
+    <div class="info-box"><h4>Timing</h4><p>For hand timing, reaction and judging the start/end often matter more than the stopwatch's displayed precision.</p></div>
+  </div>
+
+  <h3>Absolute and percentage uncertainty</h3>
+  <div class="formula-stack">
+    <div class="equation"><math display="block" aria-label="measurement equals value plus or minus absolute uncertainty"><mi>x</mi><mo>=</mo><mi>x</mi><msub><mi></mi><mtext>measured</mtext></msub><mo>±</mo><mi>Δ</mi><mi>x</mi></math></div>
+    <div class="equation"><math display="block" aria-label="percentage uncertainty equals absolute uncertainty over measured value times one hundred percent"><mtext>Percentage uncertainty</mtext><mo>=</mo><mfrac><mrow><mi>Δ</mi><mi>x</mi></mrow><mi>x</mi></mfrac><mo>×</mo><mn>100</mn><mo>%</mo></math></div>
+  </div>
+
+  <div class="example-box">
+    <p class="label">Example</p>
+    <p>A length is measured as <strong>0.842 m ± 0.002 m</strong>.</p>
+    <p>Percentage uncertainty = <strong>(0.002 / 0.842) × 100 = 0.24%</strong>.</p>
+  </div>
+
+  <h3>Precision rule</h3>
+  <p>Round the uncertainty sensibly, usually to one significant figure (sometimes two when useful), then round the measured value to the <strong>same decimal place</strong>.</p>
+  <div class="do-avoid"><div class="do"><h4>Good</h4><p>1.24 ± 0.03 m</p></div><div class="avoid"><h4>Not consistent</h4><p>1.2422 ± 0.03 m</p></div></div>
+</section>
+
+<section id="repeats" class="content-section">
+  <p class="kicker">Step 2</p><h2>Repeated measurements</h2>
+  <p>Repeats help you judge random variation. Do not just calculate a mean and throw away the spread.</p>
+
+  <h3>Mean</h3>
+  <div class="equation"><math display="block" aria-label="mean x equals sum of x values divided by n"><mover><mi>x</mi><mo>¯</mo></mover><mo>=</mo><mfrac><mrow><mo>Σ</mo><mi>x</mi></mrow><mi>n</mi></mfrac></math></div>
+
+  <h3>Half-range uncertainty</h3>
+  <div class="equation"><math display="block" aria-label="half range uncertainty equals maximum minus minimum divided by two"><mi>Δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mtext>max</mtext></msub><mo>−</mo><msub><mi>x</mi><mtext>min</mtext></msub></mrow><mn>2</mn></mfrac></math></div>
+  <p>This is simple and useful when you have a small set of repeats. Your supplied IA guidance also allows standard deviation when it is appropriate.</p>
+
+  <div class="callout warning"><strong>Minimum uncertainty:</strong> if all repeats are identical, the uncertainty is not zero. The instrument resolution still sets a minimum.</div>
+
+  <h3>Standard deviation</h3>
+  <p>Standard deviation describes the spread of repeated measurements around the mean. It can be useful when you have enough repeated measurements and the spread is genuinely random. You do not need to use it just to make the IA look more sophisticated.</p>
+
+  <div class="example-box">
+    <p class="label">Example repeats</p>
+    <p>0.74, 0.76, 0.75, 0.73, 0.75 m</p>
+    <p><strong>Mean = 0.746 m</strong></p>
+    <p><strong>Half-range = (0.76 − 0.73)/2 = 0.015 m</strong></p>
+  </div>
+</section>
+
+<section id="propagation" class="content-section">
+  <p class="kicker">Step 3</p><h2>Uncertainty in calculated quantities</h2>
+  <p>When you calculate a new quantity from measured values, the uncertainties in those measurements affect the result. The rules below are a common conservative school-physics approach. If your teacher has taught a different approved method, use that consistently.</p>
+
+  <table class="mini-table">
+    <thead><tr><th>Calculation</th><th>Uncertainty rule</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Add or subtract<br><span class="math-inline"><i>Q</i> = <i>A</i> ± <i>B</i></span></td><td>Add the <strong>absolute</strong> uncertainties.</td><td><span class="math-inline">Δ<i>Q</i> = Δ<i>A</i> + Δ<i>B</i></span></td></tr>
+      <tr><td>Multiply or divide<br><span class="math-inline"><i>Q</i> = <i>AB</i> or <i>A</i>/<i>B</i></span></td><td>Add the <strong>fractional or percentage</strong> uncertainties.</td><td><span class="math-inline">Δ<i>Q</i>/<i>Q</i> = Δ<i>A</i>/<i>A</i> + Δ<i>B</i>/<i>B</i></span></td></tr>
+      <tr><td>Power<br><span class="math-inline"><i>Q</i> = <i>A</i><sup>n</sup></span></td><td>Multiply the fractional uncertainty by the magnitude of the power.</td><td><span class="math-inline">Δ<i>Q</i>/<i>Q</i> = |<i>n</i>| Δ<i>A</i>/<i>A</i></span></td></tr>
+      <tr><td>Exact constant<br><span class="math-inline"><i>Q</i> = 2<i>A</i></span></td><td>An exact constant does not add measurement uncertainty.</td><td>Percentage uncertainty in <i>Q</i> is the same as in <i>A</i>.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout note"><strong>Why percentage uncertainty matters:</strong> it lets you compare the size of uncertainty across quantities with different units and scales.</div>
+
+  <h3>Example: coefficient of restitution</h3>
+  <p>For <span class="math-inline"><i>e</i> = √(<i>h</i><sub>r</sub>/<i>h</i><sub>d</sub>)</span>, the square root is a power of one-half:</p>
+  <div class="equation"><math display="block" aria-label="fractional uncertainty in e equals one half times fractional uncertainty in rebound height plus fractional uncertainty in drop height"><mfrac><mrow><mi>Δ</mi><mi>e</mi></mrow><mi>e</mi></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mfenced><mfrac><mrow><mi>Δ</mi><msub><mi>h</mi><mi>r</mi></msub></mrow><msub><mi>h</mi><mi>r</mi></msub></mfrac><mo>+</mo><mfrac><mrow><mi>Δ</mi><msub><mi>h</mi><mi>d</mi></msub></mrow><msub><mi>h</mi><mi>d</mi></msub></mfrac></mfenced></math></div>
+</section>
+
+<section id="error-bars" class="content-section">
+  <p class="kicker">Step 4</p><h2>Error bars</h2>
+  <p>Error bars show the uncertainty of each plotted value. They are not decoration — they help you judge how strongly the data support a trend or model.</p>
+
+  <h3>Which error bars should I add?</h3>
+  <ul>
+    <li><strong>Y error bars:</strong> use the uncertainty in your dependent or processed y-value.</li>
+    <li><strong>X error bars:</strong> include them when the uncertainty in the independent variable is large enough to matter.</li>
+    <li>If every point has a different uncertainty, use <strong>custom error bars</strong> where your software allows it.</li>
+    <li>Do not choose a default “5% error” or “standard deviation” setting unless that actually matches how your uncertainty was determined.</li>
+  </ul>
+
+  <h3>How to add custom error bars in Excel</h3>
+  <ol class="method">
+    <li>Create an XY scatter graph using your processed x and y values.</li>
+    <li>Click the data series on the graph.</li>
+    <li>Go to <strong>Chart Design → Add Chart Element → Error Bars → More Error Bar Options</strong>.</li>
+    <li>Choose <strong>Custom → Specify Value</strong>.</li>
+    <li>Select the cells containing your positive uncertainty values, then the negative values. For symmetric uncertainties these will normally be the same cells.</li>
+    <li>Repeat for horizontal error bars if x-uncertainty is important.</li>
+  </ol>
+
+  <div class="callout warning"><strong>Google Sheets:</strong> only use its built-in error-bar options when they correctly represent your experimental uncertainty. If your points have different custom uncertainties and Sheets cannot display them correctly, use Excel, Logger Pro or another graphing tool that supports per-point error bars.</div>
+
+  <h3>How to read error bars</h3>
+  <ul>
+    <li>Large bars mean the measurement gives weaker discrimination between nearby values or models.</li>
+    <li>A best-fit line does <strong>not</strong> need to pass through every error bar.</li>
+    <li>Overlapping error bars do not automatically prove two measurements are the same.</li>
+    <li>Look for systematic patterns: for example, all points lying above a model line at one end of the range.</li>
+  </ul>
+</section>
+
+<section id="graphs" class="content-section">
+  <p class="kicker">Step 5</p><h2>Choosing and making the graph</h2>
+  <p>The graph should test the physics relationship, not just make the data look neat.</p>
+
+  <div class="info-grid">
+    <div class="info-box"><h4>Axes</h4><p>Independent variable on x. Dependent or processed variable on y. Give both a quantity and a unit.</p></div>
+    <div class="info-box"><h4>Scatter graph</h4><p>Use an XY scatter graph for continuous numerical data. Do not use a category line chart.</p></div>
+    <div class="info-box"><h4>Best-fit model</h4><p>Choose linear, power, inverse or another model because the physics predicts it — not because it gives a high R².</p></div>
+    <div class="info-box"><h4>Origin</h4><p>Do not force the fit through the origin unless theory predicts zero intercept and the data are consistent with that within uncertainty.</p></div>
+  </div>
+
+  <h3>Useful linearised graphs for your practical options</h3>
+  <table class="mini-table">
+    <thead><tr><th>Investigation</th><th>Physics prediction</th><th>Useful graph</th></tr></thead>
+    <tbody>
+      <tr><td>Trolley on ramp</td><td><span class="math-inline"><i>a</i> = <i>g</i> sin θ</span></td><td><span class="math-inline"><i>a</i></span> vs <span class="math-inline">sin θ</span></td></tr>
+      <tr><td>Standing waves</td><td><span class="math-inline"><i>T</i> ∝ 1/<i>n</i><sup>2</sup></span></td><td><span class="math-inline"><i>T</i></span> vs <span class="math-inline">1/<i>n</i><sup>2</sup></span></td></tr>
+      <tr><td>Resonance tube</td><td><span class="math-inline">Δ<i>L</i> = <i>v</i>/(2<i>f</i>)</span></td><td><span class="math-inline">Δ<i>L</i></span> vs <span class="math-inline">1/<i>f</i></span></td></tr>
+      <tr><td>Rolling ball</td><td>Ideal translational energy fraction is constant for a fixed solid sphere</td><td><span class="math-inline">η</span> vs <span class="math-inline"><i>h</i></span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning"><strong>R² is not the conclusion.</strong> A high R² tells you the chosen fit follows the data closely. It does not by itself show that the physics model is correct.</div>
+
+  <h3>Residuals — optional but useful</h3>
+  <p>A residual is <strong>measured value − value predicted by the fit</strong>. Randomly scattered residuals support the chosen model. A curve or pattern in the residuals suggests the model may be missing something.</p>
+</section>
+
+<section id="gradient" class="content-section">
+  <p class="kicker">Step 6</p><h2>Gradient and intercept</h2>
+
+  <h3>Finding a gradient</h3>
+  <div class="equation"><math display="block" aria-label="gradient equals change in y divided by change in x"><mi>m</mi><mo>=</mo><mfrac><mrow><mi>Δ</mi><mi>y</mi></mrow><mrow><mi>Δ</mi><mi>x</mi></mrow></mfrac></math></div>
+  <p>Use two well-separated points <strong>on the line of best fit</strong>, not simply the first and last measured data points.</p>
+
+  <h3>Uncertainty in the gradient</h3>
+  <p>If your graphing method uses maximum and minimum acceptable lines:</p>
+  <div class="equation"><math display="block" aria-label="uncertainty in gradient equals maximum gradient minus minimum gradient divided by two"><mi>Δ</mi><mi>m</mi><mo>=</mo><mfrac><mrow><msub><mi>m</mi><mtext>max</mtext></msub><mo>−</mo><msub><mi>m</mi><mtext>min</mtext></msub></mrow><mn>2</mn></mfrac></math></div>
+  <p>Then report the gradient as <span class="math-inline"><i>m</i> ± Δ<i>m</i></span>. If software gives a justified uncertainty in the fitted gradient, you may use that instead — explain what it represents.</p>
+
+  <h3>Use the gradient physically</h3>
+  <p>Do not stop at “the gradient is 171”. State what the gradient <strong>means</strong>.</p>
+  <div class="example-box"><p>For a resonance graph of <span class="math-inline">Δ<i>L</i></span> against <span class="math-inline">1/<i>f</i></span>:</p>
+  <p><span class="math-inline">gradient = <i>v</i>/2</span>, so <span class="math-inline"><i>v</i> = 2 × gradient</span>.</p></div>
+
+  <h3>Intercepts can be evidence</h3>
+  <p>If theory predicts a zero intercept but your best fit gives a clearly non-zero value outside uncertainty, do not hide it. It may be evidence of a systematic offset, an unaccounted physical effect or a limitation in the model.</p>
+</section>
+
+<section id="outliers" class="content-section">
+  <p class="kicker">Judgement</p><h2>Outliers</h2>
+  <p>Do not remove a point because it makes the graph look worse.</p>
+  <ol class="method">
+    <li>Check the original measurement and calculation.</li>
+    <li>Repeat that condition if you still can.</li>
+    <li>Look for a specific experimental reason for the unusual value.</li>
+    <li>If you remove it, identify it and justify the removal.</li>
+    <li>When useful, compare the analysis with and without the point.</li>
+  </ol>
+</section>
+
+<section id="comparison" class="content-section">
+  <p class="kicker">Step 7</p><h2>Comparing with theory or an accepted value</h2>
+  <h3>Percentage difference</h3>
+  <div class="equation"><math display="block" aria-label="percentage difference equals absolute value experimental minus accepted divided by accepted times one hundred percent"><mtext>Percentage difference</mtext><mo>=</mo><mfrac><mrow><mo>|</mo><msub><mi>x</mi><mtext>exp</mtext></msub><mo>−</mo><msub><mi>x</mi><mtext>accepted</mtext></msub><mo>|</mo></mrow><msub><mi>x</mi><mtext>accepted</mtext></msub></mfrac><mo>×</mo><mn>100</mn><mo>%</mo></math></div>
+  <p>Do not report this number on its own. Compare the difference with the uncertainty of your experimental result and discuss whether the result is consistent with the accepted value within the limits of the experiment.</p>
+
+  <div class="callout note"><strong>Cite the accepted value.</strong> If you compare your result with a physical constant or published value, use a reliable source and include it in your references.</div>
+</section>
+
+<section id="worked-example" class="content-section">
+  <p class="kicker">Putting it together</p><h2>Mini worked example: resonance tube</h2>
+  <p>Suppose a student plots <span class="math-inline">Δ<i>L</i></span> against <span class="math-inline">1/<i>f</i></span> and obtains:</p>
+  <div class="equation"><math display="block" aria-label="gradient equals 171.5 plus or minus 4 metres per second"><mi>m</mi><mo>=</mo><mn>171.5</mn><mo>±</mo><mn>4.0</mn><mtext> m s⁻¹</mtext></math></div>
+  <p>From the theory <span class="math-inline">gradient = <i>v</i>/2</span>, so:</p>
+  <div class="equation"><math display="block" aria-label="v equals two times gradient equals 343 plus or minus 8 metres per second"><mi>v</mi><mo>=</mo><mn>2</mn><mi>m</mi><mo>=</mo><mn>343</mn><mo>±</mo><mn>8</mn><mtext> m s⁻¹</mtext></math></div>
+  <p>A strong analysis then does three things:</p>
+  <ol>
+    <li>States the experimental value and uncertainty.</li>
+    <li>Compares it with an accepted speed of sound appropriate to the room conditions.</li>
+    <li>Uses the graph, error bars and intercept to judge whether any disagreement is random scatter or evidence of a systematic effect.</li>
+  </ol>
+</section>
+
+<section id="calculators" class="content-section">
+  <p class="kicker">Quick tools</p><h2>Analysis calculators</h2>
+  <p>These are for checking calculations. You should still show an example calculation in your IA where appropriate.</p>
+  <div class="calculator-grid">
+    <form class="calc-card" data-calc="percent-uncertainty">
+      <h3>Percentage uncertainty</h3>
+      <label>Measured value<input name="value" type="number" step="any" required></label>
+      <label>Absolute uncertainty<input name="uncertainty" type="number" step="any" required></label>
+      <button type="submit">Calculate</button><output></output>
+    </form>
+    <form class="calc-card" data-calc="half-range">
+      <h3>Half-range uncertainty</h3>
+      <label>Maximum value<input name="max" type="number" step="any" required></label>
+      <label>Minimum value<input name="min" type="number" step="any" required></label>
+      <button type="submit">Calculate</button><output></output>
+    </form>
+    <form class="calc-card" data-calc="percent-difference">
+      <h3>Percentage difference</h3>
+      <label>Experimental value<input name="experimental" type="number" step="any" required></label>
+      <label>Accepted value<input name="accepted" type="number" step="any" required></label>
+      <button type="submit">Calculate</button><output></output>
+    </form>
+  </div>
+</section>
+
+</div>
+
+<aside class="side-nav">
+  <strong>On this page</strong>
+  <a href="#workflow">Analysis workflow</a>
+  <a href="#measurement-uncertainty">Measurement uncertainty</a>
+  <a href="#repeats">Repeated measurements</a>
+  <a href="#propagation">Propagation</a>
+  <a href="#error-bars">Error bars</a>
+  <a href="#graphs">Graphs</a>
+  <a href="#gradient">Gradient + intercept</a>
+  <a href="#outliers">Outliers</a>
+  <a href="#comparison">Compare with theory</a>
+  <a href="#worked-example">Worked example</a>
+  <a href="#calculators">Calculators</a>
+</aside>
+</div>
+</section>
+</main>
+
+<footer class="site-footer"><div><strong>IB Physics IA Guide</strong><p>Student support resource. Always follow your teacher's instructions and current IB requirements.</p></div><a href="https://github.com/stp-science/ib-physics-ia-guide">View repository</a></footer>
+</body></html>
