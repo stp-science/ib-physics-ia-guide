@@ -118,3 +118,8 @@ details{border:1px solid var(--line);border-radius:12px;margin:.7rem 0;backgroun
   .site-header,.site-footer,.nav-toggle,.button,.side-nav{display:none!important}
   body{font-size:11pt}.section{padding:1rem 0}.page-hero .inner{padding:1rem 0}.practical,.guide-block{break-inside:avoid;box-shadow:none}
 }
+/* Native equation formatting: no external maths renderer required */
+.equation math{font-size:1.28rem;max-width:100%;overflow-x:auto;overflow-y:hidden}
+math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
+.math-inline{white-space:nowrap;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
+.mini-table math{font-size:1.08rem;white-space:nowrap}
