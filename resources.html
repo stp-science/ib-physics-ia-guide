@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="IB Physics IA resources for uncertainties, graphs, formulas and practical support.">
+  <title>Resources | IB Physics IA Guide</title>
+  <link rel="stylesheet" href="styles.css"><script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">IA</span><span>IB Physics IA Guide</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="practicals.html">Practical ideas</a><a href="guide.html">High-mark guide</a><a class="active" href="resources.html">Resources</a><a href="faq.html">FAQ</a></nav></div></header>
+<main id="main">
+<section class="page-hero"><div class="inner"><p class="eyebrow">Help when you need it</p><h1>Resources</h1><p>Short reference material for the parts of the IA that students most often need to check while working.</p></div></section>
+
+<section class="section">
+<div class="resource-grid">
+  <article class="resource-card"><div class="resource-icon">±</div><h3>Uncertainty</h3><p>Keep measured values and uncertainty precision consistent. For repeated measurements, use a justified spread such as half-range or standard deviation, but never report an uncertainty smaller than the meaningful instrument resolution.</p></article>
+  <article class="resource-card"><div class="resource-icon">↗</div><h3>Graphs</h3><p>Choose the graph from the physics model. Linearise only when theory supports it. Label axes with units, use error bars where appropriate and use the full dataset when fitting a gradient.</p></article>
+  <article class="resource-card"><div class="resource-icon">123</div><h3>Significant figures</h3><p>Do not imply unrealistic precision. For sums/differences, decimal-place precision matters; for products/quotients, significant figures matter.</p></article>
+</div>
+
+<section class="content-section" style="margin-top:3rem">
+  <p class="kicker">Quick reference</p><h2>Useful equations for the suggested practicals</h2>
+  <table class="mini-table"><thead><tr><th>Practical</th><th>Useful relationship</th><th>Possible analysis</th></tr></thead><tbody>
+    <tr><td>Rolling ball</td><td>η = v²/(2gh)</td><td>η vs h; compare with 5/7 for an ideal solid sphere rolling without slipping.</td></tr>
+    <tr><td>Trolley on ramp</td><td>a = g sin θ</td><td>a vs sin θ; % difference from model vs θ.</td></tr>
+    <tr><td>Bouncing ball</td><td>e = √(hᵣ/h<sub>d</sub>)</td><td>e vs drop height.</td></tr>
+    <tr><td>Pendulum</td><td>T₀ = 2π√(L/g)</td><td>% deviation from T₀ vs initial angle.</td></tr>
+    <tr><td>Standing waves</td><td>f = (n/2L)√(T/μ)</td><td>T vs 1/n² at fixed f, L and μ.</td></tr>
+    <tr><td>Resonance tube</td><td>ΔL = v/(2f)</td><td>ΔL vs 1/f; gradient = v/2.</td></tr>
+    <tr><td>Refraction</td><td>n₁ sin i = n₂ sin r; d = t sin(i−r)/cos r</td><td>Measured d vs incidence angle; compare with model.</td></tr>
+  </tbody></table>
+</section>
+
+<section class="content-section">
+  <p class="kicker">Graph decisions</p><h2>Before you press “add trendline”</h2>
+  <details><summary>Should my graph go through the origin?</summary><div>Only if the physics model predicts a zero intercept and your data/uncertainty support that choice. Do not force the intercept to zero simply because the equation looks proportional.</div></details>
+  <details><summary>Should I linearise my graph?</summary><div>Linearisation is useful when it follows directly from the theoretical model and makes the predicted relationship testable. Do not transform data just to manufacture a straight line.</div></details>
+  <details><summary>What if one point looks like an outlier?</summary><div>Do not delete it automatically. Check the raw measurement, repeat that condition if possible, and justify any exclusion using evidence. You can often show the analysis with and without the point.</div></details>
+  <details><summary>How many data points do I need?</summary><div>For a straightforward linear relationship, five independent-variable values is an absolute minimum in the supplied school guidance; use more where practical, especially for non-linear relationships. Repeated dependent measurements improve your estimate of spread.</div></details>
+</section>
+
+<section class="content-section">
+  <p class="kicker">Video library</p><h2>Practical videos</h2>
+  <p>This section is set up for teacher-curated English-language videos. Links can be added alongside each practical as the class uses them, so students are not sent to a long unfiltered playlist.</p>
+  <div class="callout note"><strong>For now:</strong> use the detailed setup and method on the <a href="practicals.html">Practical ideas</a> page. Video links can be added here without changing the rest of the site.</div>
+</section>
+
+<section class="content-section">
+  <p class="kicker">Downloads</p><h2>Teacher resources</h2>
+  <p>Download links for planning sheets, exemplars or class templates can be added here as they are approved for student use.</p>
+</section>
+</section>
+</main>
+<footer class="site-footer"><div><strong>IB Physics IA Guide</strong><p>Student support resource. Always follow your teacher's instructions and current IB requirements.</p></div><a href="https://github.com/stp-science/ib-physics-ia-guide">View repository</a></footer>
+</body></html>
