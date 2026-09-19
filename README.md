@@ -2,25 +2,26 @@
 
 Student-facing static website for IB Physics Internal Assessment support.
 
-## Pages
-- `index.html` — home / overview
-- `practicals.html` — seven suggested practical families
-- `guide.html` — Research Design, Data Analysis, Conclusion, Evaluation and checklist
-- `resources.html` — quick-reference analysis and resource area
+## Site structure
+- `index.html` — homepage
+- `practicals.html` — suggested practical families
+- `guide.html` — IA sections hub
+- `research-design.html` — Research Design criterion guide
+- `data-analysis.html` — Data Analysis criterion guide and analysis toolkit
+- `conclusion.html` — Conclusion criterion guide
+- `evaluation.html` — Evaluation criterion guide
+- `resources.html` — formula and resource area
 - `faq.html` — common student questions
-- `styles.css` — responsive site styling
-- `script.js` — mobile navigation and local checklist progress
+- `styles.css` — responsive styling
+- `script.js` — mobile navigation, checklist memory and calculators
 
-## Publish with GitHub Pages
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Choose **main** and **/(root)**.
-4. Save.
+## GitHub Pages
+The site is configured as a plain static site for GitHub Pages from the `main` branch root.
 
-The site will then be available at:
+Live URL:
 https://stp-science.github.io/ib-physics-ia-guide/
 
 ## Editing
-This site uses plain HTML, CSS and JavaScript so new videos, downloads and resources can be added without a build system.
+The site uses plain HTML, CSS and JavaScript so practical videos, downloads, exemplars and additional support can be added without a build system.
 
 Student checklist progress is stored only in the browser using `localStorage`.
