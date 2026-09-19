@@ -30,3 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
   }
 });
+document.addEventListener("submit", (event) => {
+  const form = event.target.closest("[data-calc]");
+  if (!form) return;
+  event.preventDefault();
+  const n = name => Number(form.elements[name].value);
+  const out = form.querySelector("output");
+  let answer = "";
+  if (form.dataset.calc === "percent-uncertainty") {
+    const value = n("value"), u = Math.abs(n("uncertainty"));
+    answer = value === 0 ? "Value cannot be zero." : ((u / Math.abs(value)) * 100).toPrecision(3) + "%";
+  }
+  if (form.dataset.calc === "half-range") {
+    answer = (Math.abs(n("max") - n("min")) / 2).toPrecision(4);
+  }
+  if (form.dataset.calc === "percent-difference") {
+    const experimental = n("experimental"), accepted = n("accepted");
+    answer = accepted === 0 ? "Accepted value cannot be zero." : (Math.abs(experimental - accepted) / Math.abs(accepted) * 100).toPrecision(3) + "%";
+  }
+  out.textContent = answer;
+});
