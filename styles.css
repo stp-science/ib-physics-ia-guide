@@ -123,3 +123,20 @@ details{border:1px solid var(--line);border-radius:12px;margin:.7rem 0;backgroun
 math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
 .math-inline{white-space:nowrap;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
 .mini-table math{font-size:1.08rem;white-space:nowrap}
+
+.analysis-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.2rem 0 1.4rem}
+.analysis-flow>div{border:1px solid var(--line);border-radius:13px;padding:1rem;background:#fff;display:grid;grid-template-columns:34px 1fr;column-gap:.65rem;align-items:start}
+.analysis-flow span{grid-row:1/3;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.8rem}
+.analysis-flow strong{color:var(--navy)}
+.analysis-flow small{display:block;line-height:1.4;margin-top:.15rem}
+.formula-stack{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.example-box{border:1px solid #cfd8e3;background:#f8fafc;border-radius:13px;padding:1rem 1.1rem;margin:1rem 0}
+.example-box p:last-child{margin-bottom:0}
+.calculator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.calc-card{border:1px solid var(--line);border-radius:15px;padding:1.15rem;background:#fff}
+.calc-card label{display:block;font-size:.86rem;font-weight:750;color:#4e5b69;margin:.7rem 0}
+.calc-card input{display:block;width:100%;margin-top:.3rem;border:1px solid #cbd5df;border-radius:8px;padding:.62rem .7rem;font:inherit}
+.calc-card button{border:0;background:var(--navy);color:#fff;border-radius:9px;padding:.62rem .8rem;font:inherit;font-weight:800;cursor:pointer}
+.calc-card output{display:block;margin-top:.8rem;min-height:1.6rem;font-weight:850;color:var(--green)}
+@media(max-width:900px){.analysis-flow{grid-template-columns:repeat(2,1fr)}.calculator-grid{grid-template-columns:1fr}.formula-stack{grid-template-columns:1fr}}
+@media(max-width:600px){.analysis-flow{grid-template-columns:1fr}}
