@@ -4,7 +4,11 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="IB Physics IA resources for uncertainties, graphs, formulas and practical support.">
   <title>Resources | IB Physics IA Guide</title>
-  <link rel="stylesheet" href="styles.css"><script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><script defer src="script.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,13 +26,13 @@
 <section class="content-section" style="margin-top:3rem">
   <p class="kicker">Quick reference</p><h2>Useful equations for the suggested practicals</h2>
   <table class="mini-table"><thead><tr><th>Practical</th><th>Useful relationship</th><th>Possible analysis</th></tr></thead><tbody>
-    <tr><td>Rolling ball</td><td>η = v²/(2gh)</td><td>η vs h; compare with 5/7 for an ideal solid sphere rolling without slipping.</td></tr>
-    <tr><td>Trolley on ramp</td><td>a = g sin θ</td><td>a vs sin θ; % difference from model vs θ.</td></tr>
-    <tr><td>Bouncing ball</td><td>e = √(hᵣ/h<sub>d</sub>)</td><td>e vs drop height.</td></tr>
-    <tr><td>Pendulum</td><td>T₀ = 2π√(L/g)</td><td>% deviation from T₀ vs initial angle.</td></tr>
-    <tr><td>Standing waves</td><td>f = (n/2L)√(T/μ)</td><td>T vs 1/n² at fixed f, L and μ.</td></tr>
-    <tr><td>Resonance tube</td><td>ΔL = v/(2f)</td><td>ΔL vs 1/f; gradient = v/2.</td></tr>
-    <tr><td>Refraction</td><td>n₁ sin i = n₂ sin r; d = t sin(i−r)/cos r</td><td>Measured d vs incidence angle; compare with model.</td></tr>
+    <tr><td>Rolling ball</td><td>\(\eta=\dfrac{v^2}{2gh}\)</td><td>\(\eta\) vs \(h\); compare with \(\tfrac{5}{7}\) for an ideal solid sphere rolling without slipping.</td></tr>
+    <tr><td>Trolley on ramp</td><td>\(a=g\sin\theta\)</td><td>\(a\) vs \(\sin\theta\); % difference from model vs \(\theta\).</td></tr>
+    <tr><td>Bouncing ball</td><td>\(e=\sqrt{\dfrac{h_r}{h_d}}\)</td><td>\(e\) vs drop height.</td></tr>
+    <tr><td>Pendulum</td><td>\(T_0=2\pi\sqrt{\dfrac{L}{g}}\)</td><td>% deviation from \(T_0\) vs initial angle.</td></tr>
+    <tr><td>Standing waves</td><td>\(f=\dfrac{n}{2L}\sqrt{\dfrac{T}{\mu}}\)</td><td>\(T\) vs \(1/n^2\) at fixed \(f\), \(L\) and \(\mu\).</td></tr>
+    <tr><td>Resonance tube</td><td>\(\Delta L=\dfrac{v}{2f}\)</td><td>\(\Delta L\) vs \(1/f\); gradient \(=v/2\).</td></tr>
+    <tr><td>Refraction</td><td>\(n_1\sin i=n_2\sin r\); \(d=t\,\dfrac{\sin(i-r)}{\cos r}\)</td><td>Measured d vs incidence angle; compare with model.</td></tr>
   </tbody></table>
 </section>
 
