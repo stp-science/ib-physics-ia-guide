@@ -231,3 +231,10 @@ math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
  .timeline-date{width:58px;min-height:62px}
 }
 @media(max-width:520px){.ia-at-a-glance{grid-template-columns:1fr 1fr}.ia-stat strong{font-size:1.35rem}}
+
+.equipment-request-card{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;margin-top:1.2rem;padding:1.2rem 1.3rem;border:1px solid var(--line);border-radius:15px;background:#fff}
+.equipment-request-card h3{margin:.1rem 0 .3rem}
+.equipment-request-card p:last-child{margin-bottom:0;color:var(--muted)}
+.equipment-request-card .button{flex:0 0 auto;text-align:center}
+.compact-request{margin:1rem 0 2rem}
+@media(max-width:720px){.equipment-request-card{align-items:flex-start;flex-direction:column}.equipment-request-card .button{width:100%}}
