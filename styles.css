@@ -196,3 +196,8 @@ math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
 .resource-button{font-size:.86rem;padding:.62rem .8rem}
 .resource-source-note{max-width:880px;margin-top:1rem}
 @media(max-width:800px){.exemplar-library-grid{grid-template-columns:1fr}}
+
+.work-snippet{margin:1rem 0;padding:.9rem 1rem;background:#f8fafc;border:1px solid #dbe3ea;border-radius:12px}
+.snippet-label{margin:0 0 .55rem;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#667585}
+.work-snippet blockquote{margin:.55rem 0;padding:.65rem .8rem;border-left:3px solid #9aaaba;background:#fff;border-radius:0 8px 8px 0;font-family:Georgia,"Times New Roman",serif;font-size:.94rem;line-height:1.55;color:#273443}
+.snippet-note{margin:.65rem 0 0;font-size:.86rem;line-height:1.45;color:#566574}
