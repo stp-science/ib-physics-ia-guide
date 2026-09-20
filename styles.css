@@ -238,3 +238,12 @@ math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
 .equipment-request-card .button{flex:0 0 auto;text-align:center}
 .compact-request{margin:1rem 0 2rem}
 @media(max-width:720px){.equipment-request-card{align-items:flex-start;flex-direction:column}.equipment-request-card .button{width:100%}}
+
+.research-video-library{margin-top:1.2rem}
+.research-video-library>.video-resource-head{margin-bottom:.8rem}
+.research-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
+.video-card{margin:0}
+.video-card-title{font-weight:850;margin:0 0 .7rem;color:var(--navy)}
+.featured-video{margin-top:1rem}
+@media(max-width:950px){.research-video-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.research-video-grid{grid-template-columns:1fr}}
