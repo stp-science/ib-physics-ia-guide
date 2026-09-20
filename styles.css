@@ -366,3 +366,8 @@ summary{color:var(--school-red)}
   .main-nav a:hover,.main-nav a.active{border-left-color:var(--school-red)}
   .hero:after,.page-hero:after{opacity:.09}
 }
+
+.rq-options{margin:.55rem 0 .65rem;padding-left:1.25rem}
+.rq-options li{margin:.55rem 0;line-height:1.5}
+.rq-options li::marker{font-weight:900;color:var(--school-red)}
+.rq-note{margin:.8rem 0 0;padding-top:.7rem;border-top:1px solid rgba(207,23,56,.18);font-size:.9rem;color:var(--muted)}
