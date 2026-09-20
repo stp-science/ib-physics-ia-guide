@@ -14,9 +14,9 @@
 <section class="page-hero"><div class="inner">
   <p class="eyebrow">Criterion • 6 marks</p>
   <h1>Data Analysis</h1>
-  <p>Turn raw measurements into clear, justified evidence. This page is both the Data Analysis criterion guide and the practical toolkit for uncertainties, error bars, graphs, gradients and processed data.</p>
+  <p>Turn raw measurements into clear, justified evidence. Start with the core analysis sections, then use the extra help and tools only when you need them.</p>
   <div class="section-tabs"><a href="research-design.html">Research Design</a><a class="active" href="data-analysis.html">Data Analysis</a><a href="conclusion.html">Conclusion</a><a href="evaluation.html">Evaluation</a></div>
-  <div class="subnav"><a href="#workflow">Workflow</a><a href="#practical-skills">Practical skills</a><a href="#measurement-uncertainty">Uncertainty</a><a href="#repeats">Repeats</a><a href="#propagation">Propagation</a><a href="#error-bars">Error bars</a><a href="#graphs">Graphs</a><a href="#gradient">Gradient</a><a href="#comparison">Comparison</a><a href="#worked-example">Worked example</a></div>
+  <div class="subnav"><a href="#workflow">Workflow</a><a href="#core-analysis">Core analysis</a><a href="#practical-skills">Video help</a><a href="#exemplar-comparison">Exemplars</a><a href="#extra-tools">Extra tools</a></div>
 </div></section>
 
 <section class="section">
@@ -34,6 +34,21 @@
     <div><span>6</span><strong>Interpret</strong><small>Decide what the evidence says about the RQ.</small></div>
   </div>
   <div class="callout tip"><strong>Plan the graph before collecting the final data.</strong> If you do not know what you expect to plot, you probably have not yet connected the method strongly enough to the physics model.</div>
+</section>
+
+<section id="core-analysis" class="content-section">
+  <p class="kicker">What you need to know</p>
+  <h2>The core analysis skills</h2>
+  <p>You do not need to use every technique on this page. For most IAs, focus on the seven core steps below and only use the optional extras when they genuinely help your investigation.</p>
+  <div class="analysis-flow">
+    <div><span>1</span><strong>Uncertainty</strong><small>Estimate measurement uncertainty honestly.</small></div>
+    <div><span>2</span><strong>Repeats</strong><small>Use a mean and describe the spread.</small></div>
+    <div><span>3</span><strong>Process</strong><small>Calculate derived quantities and uncertainty.</small></div>
+    <div><span>4</span><strong>Error bars</strong><small>Show uncertainty where it matters.</small></div>
+    <div><span>5</span><strong>Graph</strong><small>Choose the graph from the physics model.</small></div>
+    <div><span>6</span><strong>Extract</strong><small>Interpret gradient, intercept or fitted parameter.</small></div>
+    <div><span>7</span><strong>Compare</strong><small>Compare with theory or an accepted value where appropriate.</small></div>
+  </div>
 </section>
 
 <section id="practical-skills" class="content-section">
@@ -91,8 +106,10 @@
 
   <div class="callout warning"><strong>Minimum uncertainty:</strong> if all repeats are identical, the uncertainty is not zero. The instrument resolution still sets a minimum.</div>
 
-  <h3>Standard deviation</h3>
-  <p>Standard deviation describes the spread of repeated measurements around the mean. It can be useful when you have enough repeated measurements and the spread is genuinely random. You do not need to use it just to make the IA look more sophisticated.</p>
+  <details>
+    <summary>Optional: when might I use standard deviation?</summary>
+    <div>Standard deviation describes the spread of repeated measurements around the mean. It can be useful when you have enough repeats and the spread is genuinely random. Do not use it just to make the analysis look more sophisticated.</div>
+  </details>
 
   <div class="example-box">
     <p class="label">Example repeats</p>
@@ -135,17 +152,20 @@
     <li>Do not choose a default “5% error” or “standard deviation” setting unless that actually matches how your uncertainty was determined.</li>
   </ul>
 
-  <h3>How to add custom error bars in Excel</h3>
-  <ol class="method">
-    <li>Create an XY scatter graph using your processed x and y values.</li>
-    <li>Click the data series on the graph.</li>
-    <li>Go to <strong>Chart Design → Add Chart Element → Error Bars → More Error Bar Options</strong>.</li>
-    <li>Choose <strong>Custom → Specify Value</strong>.</li>
-    <li>Select the cells containing your positive uncertainty values, then the negative values. For symmetric uncertainties these will normally be the same cells.</li>
-    <li>Repeat for horizontal error bars if x-uncertainty is important.</li>
-  </ol>
-
-  <div class="callout warning"><strong>Google Sheets:</strong> only use its built-in error-bar options when they correctly represent your experimental uncertainty. If your points have different custom uncertainties and Sheets cannot display them correctly, use Excel, Logger Pro or another graphing tool that supports per-point error bars.</div>
+  <details>
+    <summary>Extra help: adding custom error bars in Excel</summary>
+    <div>
+      <ol class="method">
+        <li>Create an XY scatter graph using your processed x and y values.</li>
+        <li>Click the data series on the graph.</li>
+        <li>Go to <strong>Chart Design → Add Chart Element → Error Bars → More Error Bar Options</strong>.</li>
+        <li>Choose <strong>Custom → Specify Value</strong>.</li>
+        <li>Select the cells containing your positive uncertainty values, then the negative values. For symmetric uncertainties these will normally be the same cells.</li>
+        <li>Repeat for horizontal error bars if x-uncertainty is important.</li>
+      </ol>
+      <p><strong>Google Sheets:</strong> only use its built-in error-bar options when they correctly represent your experimental uncertainty. If your points have different custom uncertainties and Sheets cannot display them correctly, use Excel, Logger Pro or another tool that supports per-point error bars.</p>
+    </div>
+  </details>
 
   <h3>How to read error bars</h3>
   <ul>
@@ -166,22 +186,14 @@
     <div class="info-box"><h4>Best-fit model</h4><p>Choose linear, power, inverse or another model because the physics predicts it — not because it gives a high R².</p></div>
     <div class="info-box"><h4>Origin</h4><p>Do not force the fit through the origin unless theory predicts zero intercept and the data are consistent with that within uncertainty.</p></div>
   </div>
-
-  <h3>Useful linearised graphs for your practical options</h3>
-  <table class="mini-table">
-    <thead><tr><th>Investigation</th><th>Physics prediction</th><th>Useful graph</th></tr></thead>
-    <tbody>
-      <tr><td>Trolley on ramp</td><td><span class="math-inline"><i>a</i> = <i>g</i> sin θ</span></td><td><span class="math-inline"><i>a</i></span> vs <span class="math-inline">sin θ</span></td></tr>
-      <tr><td>Standing waves</td><td><span class="math-inline"><i>T</i> ∝ 1/<i>n</i><sup>2</sup></span></td><td><span class="math-inline"><i>T</i></span> vs <span class="math-inline">1/<i>n</i><sup>2</sup></span></td></tr>
-      <tr><td>Resonance tube</td><td><span class="math-inline">Δ<i>L</i> = <i>v</i>/(2<i>f</i>)</span></td><td><span class="math-inline">Δ<i>L</i></span> vs <span class="math-inline">1/<i>f</i></span></td></tr>
-      <tr><td>Rolling ball</td><td>Ideal translational energy fraction is constant for a fixed solid sphere</td><td><span class="math-inline">η</span> vs <span class="math-inline"><i>h</i></span></td></tr>
-    </tbody>
-  </table>
+  <div class="callout note"><strong>Using one of the suggested practicals?</strong> The <a href="practicals.html">Practical Ideas</a> page already shows the useful relationship and graph for each investigation, so it is not repeated here.</div>
 
   <div class="callout warning"><strong>R² is not the conclusion.</strong> A high R² tells you the chosen fit follows the data closely. It does not by itself show that the physics model is correct.</div>
 
-  <h3>Residuals — optional but useful</h3>
-  <p>A residual is <strong>measured value − value predicted by the fit</strong>. Randomly scattered residuals support the chosen model. A curve or pattern in the residuals suggests the model may be missing something.</p>
+  <details>
+    <summary>Optional: residuals</summary>
+    <div>A residual is <strong>measured value − value predicted by the fit</strong>. Randomly scattered residuals support the chosen model. A clear pattern can suggest that the model is missing something.</div>
+  </details>
 </section>
 
 <section id="gradient" class="content-section">
@@ -287,6 +299,12 @@
   </div>
 </section>
 
+<section id="extra-tools" class="content-section">
+  <p class="kicker">Extra help and tools</p>
+  <h2>Use these when they are useful</h2>
+  <p>These tools can help you check your work, but they are not extra requirements for the IA. Use them only when they support your own analysis.</p>
+</section>
+
 <section id="calculators" class="content-section">
   <p class="kicker">Quick tools</p><h2>Analysis calculators</h2>
   <p>These are for checking calculations. You should still show an example calculation in your IA where appropriate.</p>
@@ -317,18 +335,18 @@
 <aside class="side-nav">
   <strong>On this page</strong>
   <a href="#workflow">Analysis workflow</a>
-  <a href="#practical-skills">Practical skills support</a>
+  <a href="#core-analysis">Core analysis</a>
+  <a href="#practical-skills">Video help</a>
   <a href="#measurement-uncertainty">Measurement uncertainty</a>
   <a href="#repeats">Repeated measurements</a>
-  <a href="#propagation">Propagation</a>
+  <a href="#propagation">Calculated uncertainty</a>
   <a href="#error-bars">Error bars</a>
   <a href="#graphs">Graphs</a>
   <a href="#gradient">Gradient + intercept</a>
   <a href="#outliers">Outliers</a>
   <a href="#comparison">Compare with theory</a>
-  <a href="#worked-example">Worked example</a>
   <a href="#exemplar-comparison">Exemplar comparison</a>
-  <a href="#calculators">Calculators</a>
+  <a href="#extra-tools">Extra tools</a>
 </aside>
 </div>
 </section>
