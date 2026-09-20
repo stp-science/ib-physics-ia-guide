@@ -247,3 +247,11 @@ math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif}
 .featured-video{margin-top:1rem}
 @media(max-width:950px){.research-video-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.research-video-grid{grid-template-columns:1fr}}
+
+.class-resource-grid{display:grid;gap:1rem;margin-top:1rem}
+.class-resource-card{display:grid;grid-template-columns:64px 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:16px;background:#fff;padding:1.15rem}
+.class-resource-icon{width:54px;height:54px;border-radius:12px;background:#eaf2f7;color:var(--navy);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.82rem;letter-spacing:.05em}
+.class-resource-card h3{margin:.05rem 0 .35rem}
+.class-resource-card p{color:var(--muted)}
+.class-resource-card .button{margin-top:.35rem}
+@media(max-width:620px){.class-resource-card{grid-template-columns:1fr}.class-resource-icon{width:48px;height:48px}}
