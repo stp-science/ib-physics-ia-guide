@@ -5,6 +5,34 @@
   <meta name="description" content="IB Physics IA data analysis toolkit: uncertainties, repeats, error bars, graphs, gradients, significant figures and worked examples.">
   <title>Data Analysis Toolkit | IB Physics IA Guide</title>
   <link rel="stylesheet" href="styles.css"><script defer src="script.js"></script>
+<style id="walkthrough-style">
+.content-grid > div{min-width:0}
+@media(max-width:700px){.content-section > .mini-table{display:block;overflow-x:auto;max-width:100%}.equation{overflow-x:auto}}
+#student-walkthrough{background:#fffdf9;border:1px solid var(--line);border-top:5px solid var(--school-red);padding:clamp(1rem,3vw,1.8rem);border-radius:4px}
+#student-walkthrough [hidden]{display:none!important}
+.walk-intro{color:var(--muted)}.walk-progress{width:100%;height:12px;accent-color:var(--school-red)}
+.walk-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:1.4rem;margin-top:1.3rem}
+.walk-steps{list-style:none;padding:0;margin:0;display:grid;gap:.35rem;align-content:start}
+.walk-steps button{font:inherit;font-size:.84rem;width:100%;text-align:left;padding:.55rem .65rem;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);cursor:pointer;line-height:1.35}
+.walk-steps button[aria-current="step"]{border-color:var(--school-red);background:var(--red-soft);font-weight:700}
+.walk-steps button:disabled{color:#716761;background:var(--soft);cursor:not-allowed}
+.walk-steps .walk-state{display:block;font-size:.72rem;margin-top:.15rem;color:var(--muted)}
+.walk-card{min-width:0}.walk-card h3{font-size:clamp(1.35rem,3vw,1.8rem)}
+.walk-card h4{margin-bottom:.5rem}.walk-card li{margin:.45rem 0}
+.walk-table{overflow-x:auto}.walk-card .equation{font-family:inherit;text-align:left;overflow-wrap:anywhere}
+.walk-confirm{display:flex;gap:.75rem;align-items:flex-start;padding:1rem;background:var(--green-soft);border:1px solid #acc8bb;margin:1.2rem 0}
+.walk-confirm input{width:1.2rem;height:1.2rem;flex-shrink:0;margin-top:.2rem;accent-color:var(--school-red)}
+.walk-confirm label{cursor:pointer}.walk-actions{display:flex;gap:.7rem;justify-content:space-between;flex-wrap:wrap}
+.walk-actions button,.walk-reset{font:inherit;border:1px solid var(--line);border-radius:3px;padding:.65rem .85rem;cursor:pointer;background:#fff;color:var(--ink)}
+.walk-actions .walk-next{background:var(--school-red);border-color:var(--school-red);color:#fff;font-weight:700}
+.walk-actions button:disabled{opacity:.5;cursor:not-allowed}
+#student-walkthrough button:focus-visible,#student-walkthrough input:focus-visible{outline:3px solid var(--school-red);outline-offset:3px}
+.walk-status{font-size:.9rem;color:var(--muted);min-height:1.5em;margin:.6rem 0}
+.walk-finish{background:var(--green-soft);padding:1.2rem;border-left:4px solid var(--green)}
+.walk-reset{font-size:.82rem;margin-top:.5rem}.walk-save{font-size:.84rem;color:var(--muted)}
+@media(max-width:700px){.walk-layout{grid-template-columns:1fr}.walk-steps{grid-template-columns:repeat(2,minmax(0,1fr));max-height:12rem;overflow:auto;border-bottom:1px solid var(--line);padding-bottom:.7rem}.walk-steps button{height:100%}}
+@media print{.walk-steps,.walk-actions,.walk-confirm,.walk-reset,.walk-save,.walk-status{display:none!important}.walk-layout{display:block}#student-walkthrough{border:0;padding:0}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -14,14 +42,33 @@
 <section class="page-hero"><div class="inner">
   <p class="eyebrow">Criterion • 6 marks</p>
   <h1>Data Analysis</h1>
-  <p>Turn raw measurements into clear, justified evidence. Start with the core analysis sections, then use the extra help and tools only when you need them.</p>
+  <p>Build your data analysis one step at a time. Confirm each task in the walkthrough to unlock the next, and use the videos, reference material and checklist whenever you need help.</p>
   <div class="section-tabs"><a href="research-design.html">Research Design</a><a class="active" href="data-analysis.html">Data Analysis</a><a href="conclusion.html">Conclusion</a><a href="evaluation.html">Evaluation</a></div>
-  <div class="subnav"><a href="#workflow">Workflow</a><a href="#core-analysis">Core analysis</a><a href="#practical-skills">Video help</a><a href="#exemplar-comparison">Exemplars</a><a href="#data-checklist">Checklist</a><a href="#extra-tools">Extra tools</a></div>
+  <div class="subnav"><a href="#student-walkthrough">Step-by-step guide</a><a href="#workflow">Workflow</a><a href="#core-analysis">Core analysis</a><a href="#practical-skills">Video help</a><a href="#exemplar-comparison">Exemplars</a><a href="#data-checklist">Checklist</a><a href="#extra-tools">Extra tools</a></div>
 </div></section>
 
 <section class="section">
 <div class="content-grid">
 <div>
+
+<section id="student-walkthrough" class="content-section" aria-labelledby="walkthrough-title">
+<p class="kicker">One step at a time</p><h2 id="walkthrough-title">Build your data analysis</h2>
+<p class="walk-intro">Measurements → calculations → uncertainties → graphs → final numerical results. Work on your own report, then confirm each step before moving on. The examples are for practice; use your own measurements.</p>
+<p class="walk-save" id="walk-save">Your progress saves in this browser on this device. This is your own completion record, not a teacher assessment.</p>
+<noscript><div class="callout warning">Turn on JavaScript to use the step-by-step guide and completion checks. The reference material below is still available.</div></noscript>
+<div id="walk-app" hidden>
+<label for="walk-progress" id="walk-count">0 of 20 steps confirmed</label><progress class="walk-progress" id="walk-progress" max="20" value="0"></progress>
+<div class="walk-layout"><nav aria-label="Data analysis steps"><ol class="walk-steps" id="walk-steps"></ol></nav>
+<div class="walk-card"><p class="kicker" id="walk-part"></p><h3 id="walk-title" tabindex="-1"></h3>
+<div id="walk-body"></div>
+<p id="walk-optional" class="callout note" hidden><strong>Does this apply?</strong> If this step is not relevant to your investigation, record why in your report or planning notes before confirming. If you use another justified method, explain that instead.</p>
+<div class="walk-confirm"><input type="checkbox" id="walk-confirm"><label for="walk-confirm" id="walk-confirm-label"></label></div>
+<p class="walk-save">If you remove a confirmation, this step and all following confirmations are cleared so you can check them again in order.</p>
+<div class="walk-actions"><button id="walk-back" type="button">Previous step</button><button id="walk-next" class="walk-next" type="button" disabled>Next step →</button></div>
+<p id="walk-status" class="walk-status" role="status" aria-live="polite"></p>
+<div id="walk-finish" class="walk-finish" hidden><h4>All 20 steps confirmed</h4><p>You have worked through the data analysis guide. Check your final section against the checklist, then use your results in the conclusion.</p><a class="text-link" href="#data-checklist">Review the Data Analysis checklist →</a><br><a class="text-link" href="conclusion.html">Open the Conclusion guide →</a></div>
+<button class="walk-reset" id="walk-reset" type="button">Start this walkthrough again</button>
+</div></div></div></section>
 
 <section id="workflow" class="content-section">
   <p class="kicker">Big picture</p><h2>The analysis workflow</h2>
@@ -434,6 +481,7 @@
 
 <aside class="side-nav">
   <strong>On this page</strong>
+  <a href="#student-walkthrough">Step-by-step guide</a>
   <a href="#workflow">Analysis workflow</a>
   <a href="#core-analysis">Core analysis</a>
   <a href="#practical-skills">Video help</a>
@@ -454,4 +502,79 @@
 </main>
 
 <footer class="site-footer"><div><strong>St. Peter’s Cambridge · IB Physics IA</strong><p>Student support resource. Always follow your teacher's instructions and current IB requirements.</p></div><a href="https://github.com/stp-science/ib-physics-ia-guide">View repository</a></footer>
+<script id="walkthrough-script">
+(() => {
+"use strict";
+const steps = [{"title":"Identify what you measured","part":"Organise your measurements","body":"<p>Start by separating what you <strong>measured</strong> from what you will <strong>calculate</strong>.</p><ul><li><strong>Independent variable:</strong> what you deliberately changed.</li><li><strong>Dependent variable:</strong> what you measured in response.</li><li><strong>Other measurements:</strong> anything else needed for your calculations.</li></ul><div class=\"example-box\"><strong>Example</strong><p>If you measured two lengths and subtracted them, the lengths are raw data. Their difference is processed data.</p></div><p><strong>In your report:</strong> make the measured quantities clear in your raw-data headings and explanation.</p>","check":"I can identify my independent variable, dependent variable and original measurements.","optional":false},{"title":"Explain your measurement uncertainties","part":"Organise your measurements","body":"<p>Every measurement has uncertainty. For each measured quantity, write down:</p><ol><li>The instrument or measurement method.</li><li>The uncertainty you assigned.</li><li>Why that uncertainty is reasonable.</li></ol><p>Consider the instrument resolution <strong>and</strong> the procedure: identifying an endpoint, reaction time, calibration and fluctuating readings may matter.</p><div class=\"example-box\"><strong>Example explanation</strong><p>“Each length measurement was assigned an uncertainty of ±0.1 cm because the endpoint could not be identified more precisely.”</p></div><p>Use evidence from your own experiment. Do not copy the example uncertainty automatically.</p>","check":"I have stated and justified the uncertainty in each measured quantity.","optional":false},{"title":"Present your raw data","part":"Organise your measurements","body":"<p>Create a numbered table with a descriptive title. Include:</p><ul><li>The independent-variable values and all repeated measurements.</li><li>Other measurements needed for processing.</li><li>Quantity names, symbols and units in the headings.</li><li>Measurement uncertainties in the headings, or separate columns if they vary.</li></ul><p>Use appropriate SI units or SI prefixes. Write quantity symbols in italics and units in ordinary type. Use consistent precision within each measured quantity.</p><div class=\"example-box\"><strong>Matching precision</strong><p>Length = <strong>12.4 ± 0.1 cm</strong>. Both the value and uncertainty end at the tenths place.</p></div><p>Keep the raw data needed to follow your analysis in the main report.</p>","check":"My raw-data table contains my measurements, repeats, units and uncertainties.","optional":false},{"title":"Explain what you need to calculate","part":"Calculate your results","body":"<p>Choose calculations that help answer your research question. You might need differences, means, rates, ratios, squares, square roots or another quantity predicted by the physics.</p><ol><li>State the relevant equation.</li><li>Define its symbols.</li><li>Explain why the calculated quantity is useful.</li></ol><p>Show <strong>one worked example of each important calculation</strong>. You do not need identical working for every row.</p>","check":"I have explained which quantities I will calculate and why they help answer my research question.","optional":false},{"title":"Calculate the result for each trial","part":"Calculate your results","body":"<p>Apply the appropriate calculation to each trial. Where appropriate, calculate the trial results before finding their mean.</p><div class=\"example-box\"><strong>Example</strong><p>Change in length = final length − initial length</p><p>16.0 − 10.0 = <strong>6.0 cm</strong></p></div><ul><li>Pair the correct measurements.</li><li>Use consistent units.</li><li>Check formulas and whether the results are physically reasonable.</li><li>Keep extra digits during calculations; round reported results later.</li></ul>","check":"I have calculated and checked the result for each relevant trial.","optional":true},{"title":"Find the mean of your repeats","part":"Calculate your results","body":"<p>For each independent-variable setting, summarise your repeated results with a mean.</p><div class=\"equation\">Mean = sum of repeated results ÷ number of results</div><div class=\"example-box\"><strong>Example</strong><p>Results: 5.8, 6.0 and 6.2 cm</p><p>Mean = (5.8 + 6.0 + 6.2) ÷ 3 = <strong>6.0 cm</strong></p></div><p>State what you averaged and put the means in your processed table. A worked example of a straightforward mean is usually optional.</p>","check":"I have calculated a mean for each set of repeats, or explained why averaging does not apply.","optional":true},{"title":"Calculate half the range","part":"Work out the uncertainties","body":"<p>Half-range is a simple estimate of the spread of repeated results, using the method described in the videos.</p><ol><li>Find the largest repeated result.</li><li>Find the smallest repeated result.</li><li>Subtract the smallest from the largest.</li><li>Divide by two.</li></ol><div class=\"equation\">Half-range = (largest result − smallest result) ÷ 2</div><div class=\"example-box\"><p>For 5.8, 6.0 and 6.2 cm:</p><p>(6.2 − 5.8) ÷ 2 = <strong>0.2 cm</strong></p></div><p>Show one worked example and record the remaining results. Half-range describes spread; it is not a standard error of the mean. If using a different justified method, explain it.</p>","check":"I have assessed the spread of each set of repeats and shown an example of my chosen method.","optional":true},{"title":"Propagate measurement uncertainties","part":"Work out the uncertainties","body":"<p>When you calculate a quantity from measurements, their uncertainties affect the result. This is <strong>propagation of uncertainties</strong>.</p><div class=\"walk-table\"><table class=\"mini-table\"><thead><tr><th>Calculation</th><th>Simple conservative rule</th></tr></thead><tbody><tr><td>Add or subtract</td><td>Add absolute uncertainties.</td></tr><tr><td>Multiply or divide</td><td>Add fractional uncertainties.</td></tr><tr><td>Raise to a power</td><td>Multiply fractional uncertainty by the magnitude of the power.</td></tr></tbody></table></div><p><strong>Fractional uncertainty = absolute uncertainty ÷ magnitude of value</strong><br><strong>Percentage uncertainty = fractional uncertainty × 100</strong></p><div class=\"example-box\"><strong>Subtraction example</strong><p>Change in length = final length − initial length</p><p>Each length has uncertainty ±0.1 cm.</p><p>Uncertainty in the change = 0.1 + 0.1 = <strong>±0.2 cm</strong></p></div><p>Show one worked example for each propagation method you use. Follow a different justified method consistently if appropriate to your investigation.</p>","check":"I have propagated uncertainties for my calculated quantities and shown relevant examples.","optional":true},{"title":"Choose the uncertainty to report","part":"Work out the uncertainties","body":"<p>For repeated calculated results, you may have two estimates:</p><ul><li>Uncertainty from the <strong>spread of repeats</strong>.</li><li>Uncertainty from the <strong>measurement process</strong>.</li></ul><p>In the conservative approach used in the videos, compare them and use the <strong>larger</strong> value.</p><div class=\"example-box\"><p>Half-range: ±0.3 cm<br>Propagated measurement uncertainty: ±0.2 cm</p><p>Report <strong>±0.3 cm</strong>.</p></div><p><strong>Do not add these two estimates together in this method.</strong> Check each setting separately: different rows can have different uncertainties. Identical repeats do not mean zero uncertainty.</p><p>If you use another justified uncertainty method, explain it clearly.</p>","check":"Every reported result has an uncertainty, and I have explained how it was chosen.","optional":false},{"title":"Check unusual results","part":"Work out the uncertainties","body":"<p>Check your data before completing the analysis. If a result looks unusual:</p><ol><li>Check the original measurement, units and calculation.</li><li>Look for evidence of a procedural problem.</li><li>Repeat the measurement if possible, keeping the original record.</li><li>Explain any decision to exclude a result from later analysis.</li><li>Where useful, compare analyses with and without the point.</li></ol><div class=\"callout warning\"><strong>Do not delete a result simply because it does not match the expected trend.</strong></div><p>If there are no unusual results, confirm that you checked.</p>","check":"I have checked for unusual results and explained any exclusions.","optional":false},{"title":"Complete your processed-data table","part":"Work out the uncertainties","body":"<p>Bring your calculated results together in a numbered, titled table. Include:</p><ul><li>The independent variable.</li><li>Mean or other calculated results.</li><li>Their absolute uncertainties.</li><li>Transformed quantities needed for graphing and their uncertainties, where relevant.</li></ul><p><strong>Absolute uncertainty has the same unit as the quantity.</strong> It is the uncertainty normally used for graph bars.</p><div class=\"example-box\"><p>Report a value and its absolute uncertainty to the same decimal place:</p><p><strong>2.0 ± 0.3 cm</strong></p></div><p>Usually give uncertainty to one significant figure; two may be appropriate when the first significant digit is 1. Keep quantity symbols italic and units in ordinary type.</p>","check":"My processed table contains the values and uncertainties needed for graphing.","optional":false},{"title":"Plot the original relationship","part":"Create and analyse your graphs","body":"<p>Plot the dependent quantity against the independent variable.</p><ul><li><strong>Horizontal axis:</strong> independent variable.</li><li><strong>Vertical axis:</strong> dependent quantity or its calculated mean.</li></ul><p>Use an XY scatter graph for paired numerical data. Include clear quantity labels and units, readable scales, visible points, a figure number and descriptive caption.</p><p><strong>Do not join each point to the next.</strong> A best-fit line or curve will represent the overall relationship.</p>","check":"I have plotted the original relationship with clear axes, units and a caption.","optional":false},{"title":"Add uncertainty bars","part":"Create and analyse your graphs","body":"<p>Use the <strong>absolute uncertainty for each plotted value</strong>.</p><div class=\"example-box\"><p>Result = <strong>3.0 ± 0.2 cm</strong></p><p>The vertical bar extends from <strong>2.8 to 3.2 cm</strong>.</p><p>The total height is 0.4 cm, but the uncertainty entered for each side is <strong>0.2 cm</strong>.</p></div><ul><li>Use different bar sizes if the uncertainties differ.</li><li>Add horizontal bars where the horizontal quantity has relevant uncertainty.</li><li>An exact count does not need uncertainty bars.</li><li>If bars are too small to see at the graph scale, explain this and retain the values in the table.</li></ul><p>Do not enlarge uncertainties simply to make their bars visible.</p>","check":"My uncertainty bars match my calculations, or I have explained why particular bars are not shown.","optional":false},{"title":"Fit an appropriate line or curve","part":"Create and analyse your graphs","body":"<p>Choose a fit using both the <strong>physical model</strong> and the <strong>observed pattern</strong>. Display the fitted equation.</p><ul><li>Check whether the fit is reasonably consistent with the data and uncertainty bars.</li><li>Investigate systematic departures.</li><li>Do not force a straight line onto a clearly curved relationship.</li><li>Do not force the fit through the origin simply because the ideal theory predicts it.</li><li>A high R² alone does not establish the correct physics model.</li></ul><p>The fit does not need to pass through every measured point.</p>","check":"My fitted model is justified and its equation is readable.","optional":false},{"title":"Linearise the relationship, if useful","part":"Create and analyse your graphs","body":"<p>If the original graph is curved, consider whether the physics equation suggests a transformation that should give a straight line.</p><div class=\"walk-table\"><table class=\"mini-table\"><thead><tr><th>Predicted relationship</th><th>Possible straight-line graph</th></tr></thead><tbody><tr><td>y proportional to x²</td><td>y against x²</td></tr><tr><td>y proportional to √x</td><td>y against √x</td></tr><tr><td>y proportional to 1/x</td><td>y against 1/x</td></tr></tbody></table></div><ol><li>Explain your choice using the physics.</li><li>Calculate the transformed values and their uncertainties where relevant.</li><li>Plot the transformed graph with uncertainty bars and an appropriate fit.</li></ol><p>Two graphs are useful in some investigations, but are not required for every IA. If your original relationship is already linear or a nonlinear fit answers the question appropriately, explain why another graph is unnecessary.</p>","check":"I have considered linearisation and either produced a justified transformed graph or explained why it is unnecessary.","optional":true},{"title":"Record the straight-line equation","part":"Analyse a straight-line graph","body":"<p><strong>This step applies when a straight-line fit is appropriate.</strong> If your investigation uses a suitable nonlinear model, record that decision and continue.</p><div class=\"equation\">y = mx + c</div><ul><li><strong>m is the gradient:</strong> the number multiplying x.</li><li><strong>c is the vertical intercept:</strong> the number added or subtracted at the end.</li></ul><div class=\"example-box\"><p>For <strong>y = 4.2x − 0.3</strong>:</p><p>Gradient = <strong>4.2</strong><br>Intercept = <strong>−0.3</strong></p></div><p><strong>Gradient unit = vertical-axis unit ÷ horizontal-axis unit</strong><br><strong>Intercept unit = vertical-axis unit</strong></p>","check":"I have identified the fitted gradient, intercept and units, or documented why straight-line analysis does not apply.","optional":true},{"title":"Draw maximum and minimum gradient lines","part":"Analyse a straight-line graph","body":"<p>For a straight-line analysis using the uncertainty-bar method, draw:</p><ul><li>The <strong>steepest plausible line</strong>.</li><li>The <strong>shallowest plausible line</strong>.</li></ul><p>Judge both against <strong>all uncertainty bars or rectangles</strong>. A point in the middle may limit the line: do not use only the first and last points.</p><p>If no straight line is reasonably consistent with the bars, investigate the model, uncertainty estimates or unusual points.</p><p>Display the equations of both extreme lines. Points used to construct these lines are <strong>not extra experimental measurements</strong>.</p><p>If you use another justified method of fit uncertainty, explain it and what it represents.</p>","check":"I have justified my extreme lines using the full dataset, or documented an appropriate alternative or non-applicability.","optional":true},{"title":"Calculate gradient uncertainty","part":"Analyse a straight-line graph","body":"<p>Read the gradients from the extreme-line equations.</p><div class=\"equation\">Gradient uncertainty = (maximum gradient − minimum gradient) ÷ 2</div><div class=\"example-box\"><p>Maximum gradient = 6.5 cm<br>Minimum gradient = 5.6 cm</p><p>(6.5 − 5.6) ÷ 2 = <strong>0.45 cm</strong></p><p>If the best-fit gradient is 6.0388 cm, report:<br><strong>Gradient = 6.04 ± 0.45 cm</strong></p><p>Here the gradient has units of cm because the horizontal quantity has no unit.</p></div><p>Show the full calculation and use units appropriate to your own axes. If using another justified uncertainty method, show that instead.</p>","check":"I have reported my fitted gradient with uncertainty, working and units, or documented why this does not apply.","optional":true},{"title":"Calculate intercept uncertainty","part":"Analyse a straight-line graph","body":"<p>The intercept is the number at the end of <strong>y = mx + c</strong>, including its sign.</p><p>Find the <strong>largest and smallest plausible intercepts</strong>. Check separately: maximum/minimum gradient lines do not always provide the full intercept range.</p><div class=\"equation\">Intercept uncertainty = (largest intercept − smallest intercept) ÷ 2</div><div class=\"example-box\"><p>Largest intercept = +0.3 cm<br>Smallest intercept = −0.2 cm</p><p>[0.3 − (−0.2)] ÷ 2 = <strong>0.25 cm</strong></p><p>If the best-fit intercept is 0.0423 cm, report:<br><strong>Intercept = 0.04 ± 0.25 cm</strong></p></div><p>Show your working. If using another justified uncertainty method, show that instead.</p>","check":"I have reported my intercept with justified uncertainty and units, or documented why this does not apply.","optional":true},{"title":"Present your final results and review","part":"Finish the section","body":"<p>Finish the analysis with:</p><ul><li>The fitted relationship.</li><li>Gradient, intercept or other fitted parameters, with uncertainties and units.</li><li>Any physical quantity calculated from the fit, including propagated uncertainty.</li><li>A brief description of the observed pattern.</li></ul><p><strong>Save the overall judgement about how the results answer the research question for the conclusion.</strong></p><h4>How much working should you show?</h4><div class=\"walk-table\"><table class=\"mini-table\"><thead><tr><th>Calculation</th><th>What to show</th></tr></thead><tbody><tr><td>Calculated quantities and half-range</td><td>One worked example of each method.</td></tr><tr><td>Mean or simple transformation</td><td>State the method and give all results; repeated working is unnecessary.</td></tr><tr><td>Uncertainty propagation</td><td>One example of each rule used.</td></tr><tr><td>Choosing uncertainty</td><td>Explain the rule and show an example.</td></tr><tr><td>Software-calculated gradients</td><td>Show fitted equations.</td></tr><tr><td>Manually calculated gradients</td><td>Show how they were calculated.</td></tr><tr><td>Gradient and intercept uncertainty</td><td>Show the full calculations.</td></tr><tr><td>Physical quantity derived from a fit</td><td>Worked calculation and uncertainty propagation.</td></tr></tbody></table></div><p><strong>Show the method once, then present all results.</strong> Add an example when the method or decision changes.</p><p>Use the <a href=\"#data-checklist\">existing Data Analysis checklist</a> for your final review.</p>","check":"I have reviewed my analysis and included the final numerical results, working, uncertainties and units.","optional":false}];
+const key = "ib-physics-ia-data-walkthrough-v1";
+const byId = id => document.getElementById(id);
+let done = Array(steps.length).fill(false), current = 0;
+let storageOK = true;
+function completedCount(){ let n=0; while(n<done.length && done[n]) n++; return n; }
+try {
+ const saved=JSON.parse(localStorage.getItem(key)||"null");
+ if(saved && Array.isArray(saved.done)){
+  let open=true;
+  done=steps.map((_,i)=>{ const valid=open && saved.done[i]===true; if(!valid) open=false; return valid; });
+  const requested=Number.isInteger(saved.current)?saved.current:0;
+  current=Math.max(0,Math.min(requested,completedCount(),steps.length-1));
+ }
+} catch(_){ storageOK=false; }
+function save(){
+ try { localStorage.setItem(key,JSON.stringify({done,current})); }
+ catch(_){ storageOK=false; }
+ byId("walk-save").textContent=storageOK
+ ? "Your progress saves in this browser on this device. This is your own completion record, not a teacher assessment."
+ : "Progress cannot be saved in this browser right now. You can still work through the steps while this page stays open.";
+}
+function render(focus=false){
+ const count=completedCount();
+ byId("walk-count").textContent=count+" of "+steps.length+" steps confirmed";
+ byId("walk-progress").value=count;
+ byId("walk-steps").replaceChildren();
+ steps.forEach((step,i)=>{
+  const li=document.createElement("li"), button=document.createElement("button");
+  button.type="button"; button.disabled=i>count;
+  button.textContent=(i+1)+". "+step.title;
+  if(i===current) button.setAttribute("aria-current","step");
+  const state=document.createElement("span"); state.className="walk-state";
+  state.textContent=done[i]?"Confirmed":i>count?"Locked":"Ready";
+  button.append(state);
+  button.addEventListener("click",()=>{if(i>completedCount())return;current=i;save();render(true);});
+  li.append(button);byId("walk-steps").append(li);
+ });
+ const step=steps[current];
+ byId("walk-part").textContent="Step "+(current+1)+" of "+steps.length+" · "+step.part;
+ byId("walk-title").textContent=step.title;
+ byId("walk-body").innerHTML=step.body;
+ byId("walk-confirm-label").textContent=step.check;
+ byId("walk-confirm").checked=done[current];
+ byId("walk-optional").hidden=!step.optional;
+ byId("walk-back").disabled=current===0;
+ byId("walk-next").disabled=!done[current]||current===steps.length-1;
+ byId("walk-next").textContent=current===steps.length-1?"Final step":"Next step →";
+ byId("walk-status").textContent=!done[current]?"Complete this step in your report, then tick the confirmation to continue.":current===steps.length-1?"Final step confirmed.":"Step confirmed. You can now continue.";
+ byId("walk-finish").hidden=count!==steps.length||current!==steps.length-1;
+ if(focus) byId("walk-title").focus();
+}
+byId("walk-confirm").addEventListener("change",()=>{
+ if(current>completedCount())return;
+ if(byId("walk-confirm").checked) done[current]=true;
+ else for(let i=current;i<done.length;i++)done[i]=false;
+ save();render();
+});
+byId("walk-next").addEventListener("click",()=>{
+ if(!done[current]||current>=steps.length-1)return;
+ current++;save();render(true);
+});
+byId("walk-back").addEventListener("click",()=>{
+ if(current===0)return;current--;save();render(true);
+});
+byId("walk-reset").addEventListener("click",()=>{
+ if(!window.confirm("Clear all 20 walkthrough confirmations and return to step 1? Your report and the separate checklist will not change."))return;
+ done=Array(steps.length).fill(false);current=0;save();render(true);
+});
+save();render();byId("walk-app").hidden=false;
+})();
+</script>
 </body></html>
